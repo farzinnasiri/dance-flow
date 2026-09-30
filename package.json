@@ -1,0 +1,13 @@
+{
+  "name": "dance-flow",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Salsa timing and footwork practice with synchronized audio and a rotatable dancer.",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "serve": "python3 -m http.server 8000 --directory dist"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

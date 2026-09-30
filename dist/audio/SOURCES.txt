@@ -1,0 +1,55 @@
+Dance Flow recorded instrument samples
+
+FreePats World and Rare Percussion (CC0 1.0)
+https://freepats.zenvoid.org/Percussion/world-and-rare-percussion.html
+https://github.com/freepats/world-percussion
+clave-a/b: samples/Claves/01.flac, 02.flac
+conga-slap-a/b: samples/MutedConga/High_v2_01_01.flac, High_v2_01_02.flac
+conga-open-a/b: samples/Conga/v3_01_01.flac, v3_01_02.flac
+bongo: samples/Bongos/1_01.flac
+maraca-a/b: samples/Maracas/01_01.flac, 02_01.flac
+
+Versilian Community Sample Library (CC0 1.0)
+https://github.com/sgossner/VCSL
+cowbell: Idiophones/Struck Idiophones/Cowbells/Cowbell1_Hit_v3_rr1_Mid.wav
+piano-c4/g4: Chordophones/Zithers/Grand Piano, Kawai/Sustains/GPiano_sus_C4_v2_rr1_Player.wav and GPiano_sus_G#4_v2_rr1_Player.wav (g4 file is G sharp 4)
+
+FreePats Clean Electric Bass (CC0 1.0)
+https://freepats.zenvoid.org/ElectricGuitar/clean-electric-bass.html
+https://github.com/freepats/electric-bass-YR
+bass-c2/f1/g1: samples/finger/C.flac, F.flac, G.flac
+
+Recordings trimmed and converted to mono MP3 for browser playback. Samples are used for a short original practice groove. Salsa Beat Machine was used as a reference for instrument choices; its recordings are not included.
+
+September 2026 groove update
+---------------------------
+Piano replaced with eight close-mic forte Steinway B samples from VCSL (CC0):
+Chordophones/Zithers/Grand Piano, Steinway B/Sus/JHPiano_Sus_Close_{C3,G#3,C4,E4,G#4,C5,E5,G#5}_vl4_rr1.wav
+Files piano-48,56,60,64,68,72,76,80.mp3: silence trimmed, peak normalized, tail limited to 1.6 seconds, stereo MP3.
+Playback uses short note envelopes, octave figures, inner thirds/fifths, a high-shelf presence boost and an original 2–3 montuno arrangement.
+
+VCSL CC0 additions:
+guiro-long: Idiophones/Struck Idiophones/Guiro/Guiro_Med_rr1_Mid.wav
+guiro-short: Idiophones/Struck Idiophones/Guiro/Guiro_Fast_rr1_Mid.wav
+bongo-muted: Membranophones/Struck Membranophones/Bongos/BongoH_HitMuted1_v2_rr1_Mid.wav
+bongo-low: Membranophones/Struck Membranophones/Bongos/BongoL_Hit1_v3_rr1_Mid.wav
+
+Sassaby, Freesound, all CC0. Public high-quality MP3 previews trimmed and normalized:
+timbale-high: LP Matador Timbales High (Macho), https://freesound.org/people/Sassaby/sounds/533095/
+timbale-low: LP Matador Timbales Low (Hembra), https://freesound.org/people/Sassaby/sounds/533094/
+timbale-rim: LP Matador Timbales High Rimshot, https://freesound.org/people/Sassaby/sounds/533089/
+mambo-mouth: Toca Timbale Bell Mouth, https://freesound.org/people/Sassaby/sounds/533090/
+mambo-body: Toca Timbale Bell Body, https://freesound.org/people/Sassaby/sounds/533091/
+Preview URL format: https://cdn.freesound.org/previews/533/{soundID}_2771755-hq.mp3
+These are real instrument recordings, not drum-machine emulations.
+
+Spoken count recordings: Jackson, Free Spoken Digit Dataset (FSDD), digits 1–8, index 0.
+https://github.com/Jakobovski/free-spoken-digit-dataset
+Original recordings: recordings/{digit}_jackson_0.wav
+License: Creative Commons Attribution-ShareAlike 4.0 International
+https://creativecommons.org/licenses/by-sa/4.0/
+voice-1.wav through voice-8.wav: silence trimmed, bandpass EQ, gentle compression, peak normalization and resampling. These adapted count files are distributed under CC BY-SA 4.0. Original natural speech pitch retained. Visible attribution is included in the inline Music settings under Sound credits.
+The count recordings are human spoken numbers; the person did not record a salsa-specific instruction performance.
+
+Original practice arrangement in groove.js:
+2–3 son clave, conga tumbao, mambo cowbell, timbale rim pattern/fill, bongo martillo, güiro, alternating maracas, bass tumbao, two-bar piano montuno. Instrument changes mute stems without resetting the beat. Instructor calls the two breaks for the selected timing; roles share those break counts, with role-specific feet/directions and a stronger forward-break call.

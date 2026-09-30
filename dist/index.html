@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf8f4">
+  <title>Dance Flow · Salsa practice</title>
+  <meta name="description" content="Practice salsa timing with a rotatable dancer, recorded instruments and footwork for lead and follow.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23121214'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-size='44' font-family='Arial' font-weight='bold' fill='%23f5f5f7'%3E1%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css?v=8980a589a089b241">
+  <script src="steps.js?v=8980a589a089b241" defer></script>
+  <script src="timeline.js?v=8980a589a089b241" defer></script>
+  <script src="groove.js?v=8980a589a089b241" defer></script>
+  <script src="dancer.js?v=8980a589a089b241" defer></script>
+  <script src="app.js?v=8980a589a089b241" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">dance<span>flow</span></div>
+      <button id="timingOpen" class="timing-trigger" aria-expanded="false" aria-controls="timingPanel"><strong id="timingLabel">New York · On2</strong><span class="picker-mark" aria-hidden="true">⌄</span></button>
+      <div class="role-switch" role="group" aria-label="Dance role"><button class="role-button active" data-role="leader" aria-pressed="true">Lead</button><button class="role-button" data-role="follower" aria-pressed="false">Follow</button></div>
+    </header>
+    <div id="workspace" class="workspace">
+      <section class="practice" aria-label="Salsa practice">
+        <div class="stage">
+          <div class="dancer-panel"><canvas id="dancerCanvas" class="dancer-canvas" role="img" tabindex="0" aria-label="Rotatable 3D dancer. Drag or use arrow keys to change view; Home returns to back view."></canvas></div>
+          <div class="view-controls"><select id="view" aria-label="Dancer view"><option value="back">Back view</option><option value="side">Side view</option><option value="front">Front view</option></select><button id="resetView" class="view-reset" type="button" aria-label="Reset to back view" title="Reset to back view">↺</button></div>
+        </div>
+        <div class="instruction">
+          <div id="cue" class="cue"><span id="count" class="count-number">1</span><h1 id="action">Small left step back</h1><span id="footChip" class="sr-only">LEFT FOOT</span></div>
+          <p id="nextCue" class="next-cue">Next: 2 · Right back break</p>
+          <p id="status" class="status" role="status" hidden></p>
+        </div>
+        <div id="beatsSection" class="beats-section"><div id="beatGrid" class="beat-grid" role="group" aria-label="Eight musical counts"></div><button id="breakdown" class="breakdown-toggle" aria-expanded="false" aria-controls="beatGrid">Step breakdown <span aria-hidden="true">⌄</span></button></div>
+      </section>
+      <aside id="timingPanel" class="options-panel" aria-labelledby="timingTitle" hidden>
+        <div class="panel-header"><h2 id="timingTitle">Choose your basic</h2><button id="timingClose" class="panel-collapse" aria-label="Collapse timing options">×</button></div>
+        <div id="timingChoices" class="timing-choices" role="group" aria-label="Common salsa basics"></div>
+        <details id="moreTimings" class="disclosure"><summary>More timings (7)</summary><div id="advancedChoices" class="timing-choices advanced-choices" role="group" aria-label="More dance timings"></div></details>
+        <details class="disclosure"><summary>About this timing</summary><p id="patternNote" class="pattern-detail"></p><p>On1, On2 and On3 name the break count: when your direction changes. Your first step can fall on another count. A hold keeps your weight on the supporting foot.</p><p id="voiceHint" class="voice-hint"></p><a href="https://thedancedojo.com/salsa-timing-on1-on2-on3/" target="_blank" rel="noopener">Salsa timing guide</a><br><button id="reset" class="reset">Restart at 1</button></details>
+      </aside>
+      <aside id="musicPanel" class="options-panel" aria-labelledby="musicTitle" hidden>
+        <div class="panel-header"><h2 id="musicTitle">Music</h2><button id="musicClose" class="panel-collapse" aria-label="Collapse music options">×</button></div>
+        <div class="band-presets" role="group" aria-label="Band sound"><button id="fullBand" class="band-preset" aria-pressed="true"><span><strong>Full band</strong><small>Melody + percussion</small></span><i class="selected-mark" aria-hidden="true"></i></button><button id="percussionBand" class="band-preset" aria-pressed="false"><span><strong>Percussion</strong><small>Rhythm only</small></span><i class="selected-mark" aria-hidden="true"></i></button></div>
+        <details id="customBand" class="disclosure"><summary>Customize band</summary><div id="groovePanel" class="music-panel"><div class="instrument-grid">
+          <label class="instrument"><input id="clave" type="checkbox" checked><span>Clave</span></label>
+          <label class="instrument"><input id="cowbell" type="checkbox" checked><span>Cowbell</span></label>
+          <label class="instrument"><input id="congas" type="checkbox" checked><span>Congas</span></label>
+          <label class="instrument"><input id="piano" type="checkbox" checked><span>Piano</span></label>
+          <label class="instrument"><input id="bass" type="checkbox" checked><span>Bass</span></label>
+          <label class="instrument"><input id="timbales" type="checkbox" checked><span>Timbales</span></label>
+          <label class="instrument"><input id="guiro" type="checkbox" checked><span>Güiro</span></label>
+          <label class="instrument"><input id="bongos" type="checkbox" checked><span>Bongos</span></label>
+          <label class="instrument"><input id="maracas" type="checkbox" checked><span>Maracas</span></label>
+        </div></div></details>
+        <details id="ownSong" class="disclosure"><summary>Use your own song</summary>
+          <div class="music-mode" role="group" aria-label="Music source"><button id="grooveMode" class="mode active" aria-pressed="true">Practice groove</button><button id="trackMode" class="mode" aria-pressed="false">Your song</button></div>
+          <div id="trackPanel" class="music-panel" hidden><label class="upload-label" for="songFile">Choose a song</label><input id="songFile" type="file" accept="audio/*"><p id="musicStatus" class="panel-note">Your audio file</p><div id="songControls" hidden><div class="song-seek"><input id="songSeek" type="range" min="0" max="1000" value="0" aria-label="Song position"><span id="songTime">0:00</span></div><button id="markOne" class="mark-button">Mark count 1 here</button><p class="panel-note">Set the BPM below, then mark a musical 1 while the song plays.</p></div></div>
+        </details>
+        <details class="sound-credits"><summary>Sound credits</summary><p>Instruments: FreePats, Versilian Studios and <a href="https://freesound.org/people/Sassaby/packs/28352/" target="_blank" rel="noopener">Sassaby</a> (CC0). Count recordings: Jackson, <a href="https://github.com/Jakobovski/free-spoken-digit-dataset" target="_blank" rel="noopener">Free Spoken Digit Dataset</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Counts trimmed, equalized and compressed. <a href="audio/SOURCES.txt" target="_blank" rel="noopener">Details</a>.</p></details>
+      </aside>
+    </div>
+    <footer class="bottom-bar">
+      <label class="count-control" for="instructor">Count aloud<input id="instructor" class="toggle" role="switch" type="checkbox" checked aria-describedby="voiceHint"></label>
+      <div class="transport-group"><div class="transport"><button id="back" class="skip" aria-label="Previous count">⏮</button><button id="play" class="play-button" aria-label="Start practice"><span id="playIcon" aria-hidden="true">▶</span><span id="playText" class="sr-only">Start practice</span></button><button id="next" class="skip" aria-label="Next count">⏭</button></div><div class="tempo-control"><button id="tempoDown" aria-label="Decrease tempo by 5 BPM">−</button><span class="tempo-label"><strong id="tempoValue">90</strong> BPM</span><button id="tempoUp" aria-label="Increase tempo by 5 BPM">+</button><input id="tempo" class="sr-only" type="range" min="70" max="210" value="90" step="5" aria-label="Tempo in beats per minute" tabindex="-1"></div></div>
+      <button id="musicOpen" class="music-button" aria-expanded="false" aria-controls="musicPanel"><span aria-hidden="true">♫</span><span>Music</span></button>
+    </footer>
+  </main>
+  <audio id="song" preload="metadata"></audio>
+</body>
+</html>
